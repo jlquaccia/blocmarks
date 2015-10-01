@@ -2,16 +2,24 @@
 <html>
 <head>
   <title>Blocmarks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to "Home", root_path %>
-  <%= link_to "About", welcome_about_path %>
-  <%= link_to "My Blocmarks" %> | <%= link_to "Sign Out" %>
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "About", about_path %></li>
+      <div class="pull-right mt_10">
+        <%= link_to "My Blocmarks", '#', class: 'm_10_by_15' %> |
+        <%= link_to "Sign Out", '#', class: 'm_10_by_15' %>
+      </div>
+    </ul>
 
-  <%= yield %>
+    <%= yield %>
+  </div>
 
 </body>
 </html>

@@ -48,3 +48,6 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# CUSTOM
+# Sassy Bootstrap
+gem 'bootstrap-sass'

@@ -1,26 +1,64 @@
-<h1>All Blockmarks</h1>
+<h1 class="text-center">All Blockmarks</h1>
 
-<%= link_to "#inspirational" %>
+<%= link_to "#inspirational", class: 'blocmark_img' %>
+
 <br>
 <br>
-<%= image_tag("http://lorempixel.com/400/200", alt: "Something Inspirational")%>
-<%= link_to "Like" %>
-<%= image_tag("http://lorempixel.com/400/200", alt: "Something Inspirational")%>
-<%= link_to "Like" %>
-<%= image_tag("http://lorempixel.com/400/200", alt: "Something Inspirational")%>
-<%= link_to "Like" %>
-<%= image_tag("http://lorempixel.com/400/200", alt: "Something Inspirational")%>
-<%= link_to "Like" %>
+
+<div class="blocmark_wrapper">
+  <%= image_tag("http://lorempixel.com/200/200/abstract", alt: "Something Inspirational", class: 'blocmark_img')%>
+  <div class="like text-center">
+    <%= link_to "Like", "#" %>
+  </div>
+</div>
+<div class="blocmark_wrapper">
+  <%= image_tag("http://lorempixel.com/200/200/city", alt: "Something Inspirational", class: 'blocmark_img')%>
+  <div class="like text-center">
+    <%= link_to "Like", "#" %>
+  </div>
+</div>
+<div class="blocmark_wrapper">
+  <%= image_tag("http://lorempixel.com/200/200/food", alt: "Something Inspirational", class: 'blocmark_img')%>
+  <div class="like text-center">
+    <%= link_to "Like", "#" %>
+  </div>
+</div>
+<div class="blocmark_wrapper">
+  <%= image_tag("http://lorempixel.com/200/200/nature", alt: "Something Inspirational", class: 'blocmark_img')%>
+  <div class="like text-center">
+    <%= link_to "Like", "#" %>
+  </div>
+</div>
+
 <br>
 <br>
+
 <%= link_to "#cats" %>
+
 <br>
 <br>
-<%= image_tag("http://lorempixel.com/400/200/cats", alt: "Something Inspirational")%>
-<%= link_to "Like" %>
-<%= image_tag("http://lorempixel.com/400/200/cats", alt: "Something Inspirational")%>
-<%= link_to "Like" %>
-<%= image_tag("http://lorempixel.com/400/200/cats", alt: "Something Inspirational")%>
-<%= link_to "Like" %>
-<%= image_tag("http://lorempixel.com/400/200/cats", alt: "Something Inspirational")%>
-<%= link_to "Like" %>
+
+<div class="blocmark_wrapper">
+  <%= image_tag("http://lorempixel.com/200/200/cats/1", alt: "Something Inspirational", class: 'blocmark_img')%>
+  <div class="like text-center">
+    <%= link_to "Like", "#" %>
+  </div>
+</div>
+<div class="blocmark_wrapper">
+  <%= image_tag("http://lorempixel.com/200/200/cats/2", alt: "Something Inspirational", class: 'blocmark_img')%>
+  <div class="like text-center">
+    <%= link_to "Like", "#" %>
+  </div>
+</div>
+<div class="blocmark_wrapper">
+  <%= image_tag("http://lorempixel.com/200/200/cats/3", alt: "Something Inspirational", class: 'blocmark_img')%>
+  <div class="like text-center">
+    <%= link_to "Unlike", "#" %>
+  </div>
+</div>
+<div class="blocmark_wrapper">
+  <%= image_tag("http://lorempixel.com/200/200/cats/4", alt: "Something Inspirational", class: 'blocmark_img')%>
+  <div class="like text-center">
+    <%= link_to "Like", "#" %>
+  </div>
+</div>

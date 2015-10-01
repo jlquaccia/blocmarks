@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.mt_10 {
+  margin-top: 10px;
+}
+
+.m_10_by_15 {
+  margin: 10px 15px;
+}
+
+.blocmark_wrapper {
+  width: 200px;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.like {
+  width: 200px;
+  margin-top: 10px;
+}
+
+.blocmark_img {
+  border: 1px solid black;
+}

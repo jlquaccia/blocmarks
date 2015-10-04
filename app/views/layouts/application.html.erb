@@ -12,10 +12,18 @@
     <ul class="nav nav-tabs">
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "About", about_path %></li>
+      
       <div class="pull-right mt_10">
-        <%= link_to "My Blocmarks", '#', class: 'm_10_by_15' %> |
-        <%= link_to "Sign Out", '#', class: 'm_10_by_15' %>
+        <% if current_user %>
+          Hello <%= current_user.email %>!
+          <%= link_to "My Blocmarks", '#', class: 'm_10_by_15' %> |
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'm_10_by_15' %>
+        <% else %>
+          <%= link_to "Sign In", new_user_session_path %> or
+          <%= link_to "Sign Up", new_user_registration_path %>
+        <% end %>
       </div>
+
     </ul>
 
     <% if flash[:notice] %>

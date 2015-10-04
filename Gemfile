@@ -53,3 +53,5 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 # User Authentication
 gem 'devise'
+# A way to handle sensitive data
+gem 'figaro', '1.0'

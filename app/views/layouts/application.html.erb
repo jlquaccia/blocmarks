@@ -15,7 +15,7 @@
       
       <div class="pull-right mt_10">
         <% if current_user %>
-          Hello <%= current_user.email %>!
+          Hello <%= link_to (current_user.name || current_user.email), edit_user_registration_path %>!
           <%= link_to "My Blocmarks", '#', class: 'm_10_by_15' %> |
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'm_10_by_15' %>
         <% else %>

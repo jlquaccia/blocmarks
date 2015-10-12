@@ -3,12 +3,26 @@ class IncomingController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
 
   def create
-    # Take a look at these in your server logs
-    # to get a sense of what you're dealing with.
-    puts "INCOMING PARAMS HERE: #{params}"
-
     # You put the message-splitting and business
     # magic here.
+    @user = User.find(params[:sender])
+    @topic = Topic.find(params[:subject])
+    @url = params["body-plain"] # ????????
+
+    if @user == nil
+      @user = User.new(params.require(:user).permit(:name))
+      @user.save
+    end
+
+    if @topic == nil
+      @topic = Topic.new(params.require(:topic).permit(:title))
+      @topic.save
+    end
+
+    if @user && @topic
+      @bookmark = Bookmark.new(params.require(:bookmark).permit(:url))
+      @bookmark.save
+    end
 
     # Assuming all went well.
     head 200

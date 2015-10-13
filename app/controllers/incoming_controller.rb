@@ -5,23 +5,24 @@ class IncomingController < ApplicationController
   def create
     # You put the message-splitting and business
     # magic here.
-    @user = User.find(params[:sender])
-    @topic = Topic.find(params[:subject])
-    @url = params["body-plain"] # ????????
+    @user = User.find_by(email: params[:sender])
+    @topic = Topic.find_by(title: params[:subject])
+    @url = params["body-plain"]
 
-    if @user == nil
-      @user = User.new(params.require(:user).permit(:name))
-      @user.save
+    if @user.nil?
+      @user = User.create(name: params[:sender], email: params[:sender], password: "helloworld", password_confirmation: "helloworld")
+      @user.skip_confimation!
+      @user.save!
     end
 
-    if @topic == nil
-      @topic = Topic.new(params.require(:topic).permit(:title))
-      @topic.save
+    if @topic.nil?
+      @topic = Topic.create(title: params[:subject], user_id: @user.id)
+      @topic.save!
     end
 
-    if @user && @topic
-      @bookmark = Bookmark.new(params.require(:bookmark).permit(:url))
-      @bookmark.save
+    if @user && @topic && @url
+      @bookmark = Bookmark.create(url: @url, topic_id: @topic.id)
+      @bookmark.save!
     end
 
     # Assuming all went well.
